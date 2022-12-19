@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+    server:
+        build: ./RestAPIServer
+        container_name: serverRestApi.org
+        environment:
+            - project.logger=detail
+            - SPRING_PROFILES_ACTIVE=dev
+        ports:
+            - "8443:8443"
+        networks:
+            - proxy.front-network
+    client:
+        build: ./RestAPIClient
+        container_name: clientRestApi.org
+        environment:
+            - URLADDRESSED=serverRestApi.org
+        networks:
+            - proxy.front-network
+networks:
+    proxy.front-network:
+        driver: bridge
