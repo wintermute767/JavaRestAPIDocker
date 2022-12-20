@@ -28,6 +28,17 @@ GET, POST, PUT, DELITE, что дает возможность получать,
 После завершения сбои контейнеров в командой строке отобразится автоматические запросы от клиента к серверу.
 В командной строке отобразятся записи об успешных выполненных запросах: по созданию (POST), запросу (GET), обновлению (PUT) и удалению (DELETE) объектов Person для версии 1 и 2.
 
+Проверить работу сервера в контейнере можно следующими командами:  
+1) получить значение Person по id:
+curl -XGET http://localhost:8443/api/<версия v1 или v2>/person/<необходимый id>
+2) внести новое значение Person:
+curl -X POST http://localhost:8443/api/v1/person/  -H "Content-Type: application/json" -d {\"firstName\":\"Ivan\",\"secondName\":\"Ivanov\",\"age\":30,\"height\":182}
+curl -X POST http://localhost:8443/api/v2/person/  -H "Content-Type: application/json" -d {\"firstName\":\"Ivan\",\"secondName\":\"Ivanov\",\"age\":30,\"height\":182,\"workExperience\":3,\"placeOfResidence\":\"Moscov\"}
+3) удалить значение Person по id:
+curl -X DELETE http://localhost:8443/api/<версия v1 или v2>/person/<необходимый id>
+4)Заменить значение по id
+curl -X PUT http://localhost:8443/api/<версия v1 или v2>/person/<необходимый id>  -H "Content-Type: application/json" -d {\"firstName\":\"Ivan\",\"secondName\":\"Ivanov\"}
+
 К сожалению, реализовать mTLS не успел. Начались проблемы с клинтом и в отведенное время не уложился.
 
 Ознакомиться с кодом программы:
