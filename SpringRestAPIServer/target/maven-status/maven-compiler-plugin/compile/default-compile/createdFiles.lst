@@ -1,0 +1,16 @@
+com\example\SpringRestAPI\model\PersonV2.class
+com\example\SpringRestAPI\service\logService\SimpleLoggerImpl.class
+com\example\SpringRestAPI\service\PersonServiceV2Impl.class
+com\example\SpringRestAPI\model\PersonV1.class
+com\example\SpringRestAPI\repository\PersonRepositoryInFile.class
+com\example\SpringRestAPI\service\PersonServiceV1Impl.class
+com\example\SpringRestAPI\rest\PersonRestControllerV1.class
+com\example\SpringRestAPI\service\PersonService.class
+com\example\SpringRestAPI\service\logService\DetailedLoggerImpl.class
+com\example\SpringRestAPI\rest\PersonRestControllerV2.class
+com\example\SpringRestAPI\documentation\SwaggerConfig.class
+com\example\SpringRestAPI\repository\PersonRepositoryDefault.class
+com\example\SpringRestAPI\service\logService\DefaultLoggerImpl.class
+com\example\SpringRestAPI\service\logService\Logger.class
+com\example\SpringRestAPI\SpringRestApiApplication.class
+com\example\SpringRestAPI\repository\ObjectRepository.class
