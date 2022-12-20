@@ -2,9 +2,11 @@ FROM openjdk:17
 
 WORKDIR /usr/src/app
 
-RUN microdnf install git && microdnf install curl
-RUN git clone https://github.com/wintermute767/SpringRestAPIClient.git .
+RUN microdnf install git
+ADD git clone https://github.com/wintermute767/SpringRestAPIServer.git .
 
+ENV SPRING_PROFILES_ACTIVE=dev
+ENV LOGGER=detail
 RUN chown 777 ./mvnw && chmod +x ./mvnw && ./mvnw dependency:resolve
-RUN ./mvnw spring-boot:run
-CMD ["app"]
+
+CMD env SPRING_PROFILES_ACTIVE=$SPRING_PROFILES_ACTIVE,LOGGER=$LOGGER  ./mvnw spring-boot:run
