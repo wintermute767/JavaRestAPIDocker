@@ -2,9 +2,9 @@ FROM openjdk:17
 
 WORKDIR /usr/src/app
 
-RUN microdnf install git && microdnf install curl
+RUN microdnf install git
+RUN git clone https://github.com/wintermute767/SpringRestAPIClient.git  .
 
-RUN git clone https://github.com/wintermute767/SpringRestAPIClient.git .
 
 ENV URLADDRESSED=http://server:8443
 
